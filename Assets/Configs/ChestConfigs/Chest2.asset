@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc666fce0b773d346b8c125f78deabb6, type: 3}
+  m_Name: Chest2
+  m_EditorClassIdentifier: Assembly-CSharp::ChestConfigData
+  Name: Silver Chest
+  GoldReward: 20
+  UniqueId: Chest2
+  DelayTimeAfterOpen: 0
+  Icon: {fileID: 1272612232, guid: afb363c89bd8f6b4cbd82e18b6130040, type: 3}
