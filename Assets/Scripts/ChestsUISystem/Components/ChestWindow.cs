@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 public class ChestWindow : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class ChestWindow : MonoBehaviour
 
     public Transform ChestParent => _grid;
 
+    [Inject]
     public void Construct(IChestWindowPresenter chestWindowPresenter)
     {
         chestWindowPresenter.Register(this);

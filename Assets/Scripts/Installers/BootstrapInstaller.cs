@@ -12,7 +12,10 @@ namespace Installers
         public override void InstallBindings()
         {
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+            Container.Bind<IConfigDataService>().To<ConfigDataService>().AsSingle();
+            Container.Bind<ITimeService>().To<TimeService>().AsSingle();
             BindGameStateMachine();
+            BindEventBus();
         }
 
         private void BindGameStateMachine()
@@ -27,8 +30,8 @@ namespace Installers
 
         private void BindEventBus()
         {
-            SignalBusInstaller.Install(Container);      
-            Container.Bind<IEventBus>().AsSingle();
+            SignalBusInstaller.Install(Container);
+            Container.Bind<IEventBus>().To<EventBus>().AsSingle();
 
         }
 

@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Silver Chest
   GoldReward: 20
   UniqueId: Chest2
-  DelayTimeAfterOpen: 0
+  DelayTimeAfterOpen: 10
   Icon: {fileID: 1272612232, guid: afb363c89bd8f6b4cbd82e18b6130040, type: 3}

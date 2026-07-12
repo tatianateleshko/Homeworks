@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2203b67a3751c4c8ff66fd5edbe909, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: Assembly-CSharp::GameConfigData
-  ChestViewPrefab: {fileID: 0}
+  ChestViewPrefab: {fileID: 4970281406424743928, guid: 0d5b5673bf30ef849b5404ee05a95bca, type: 3}

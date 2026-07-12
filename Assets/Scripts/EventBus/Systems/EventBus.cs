@@ -4,7 +4,12 @@ using Zenject;
 
 public class EventBus : IEventBus
 {
-    private SignalBus _signalBus;
+    private readonly SignalBus _signalBus;
+
+    public EventBus(SignalBus signalBus)
+    {
+        _signalBus = signalBus;
+    }
 
     public void RaiseEvent<T>(T evt)
     {

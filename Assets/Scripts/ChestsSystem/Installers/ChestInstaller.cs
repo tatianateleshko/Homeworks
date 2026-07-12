@@ -10,8 +10,5 @@ public class ChestInstaller : Installer<ChestInstaller>
         Container.BindInterfacesAndSelfTo<ChestService>().AsSingle();
         Container.Bind<IChestTimerService>().To<ChestTimerService>().AsSingle();
         Container.Bind<IChestWindowPresenter>().To<ChestWindowPresenter>().AsSingle();
-    }
-
-
-
+   }
 }

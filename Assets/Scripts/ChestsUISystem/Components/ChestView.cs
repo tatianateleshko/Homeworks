@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class ChestView : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class ChestView : MonoBehaviour
     private string _id;
     private IChestBus _chestBus;
 
+    [Inject]
     public void Construct(IChestBus chestBus)
     {
         _chestBus = chestBus;

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8488535654542072273}
   - component: {fileID: 2704294902575275074}
   - component: {fileID: 6090432384839335404}
+  - component: {fileID: -3206447114972116464}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -50,6 +51,7 @@ MonoBehaviour:
   _monoInstallers:
   - {fileID: 6090432384839335404}
   - {fileID: 2704294902575275074}
+  - {fileID: -3206447114972116464}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
   _editorReflectionBakingCoverageMode: 0
@@ -88,3 +90,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e415d368900174db7a34b174596a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Installers.BootstrapInstaller
+--- !u!114 &-3206447114972116464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2501555120815730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f65f53411984aaeaba7164eac20a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameplayInstaller

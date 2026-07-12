@@ -8,7 +8,8 @@ public class ConfigDataService : IConfigDataService
     private GameConfigData _gameConfigData;
     public void WarmUp()
     {
-        _chests = Resources.LoadAll<ChestConfigData>("Config/ChestConfigs")
+      
+        _chests = Resources.LoadAll<ChestConfigData>("Configs/ChestConfigs")
             .ToDictionary(x => x.UniqueId, x => x);
 
         _gameConfigData = Resources.Load<GameConfigData>("Configs/Common/GameConfig");
