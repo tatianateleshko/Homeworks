@@ -1,3 +1,4 @@
+using Gameplay.Enums;
 using UnityEngine;
 
 public interface IUnitData
@@ -6,4 +7,6 @@ public interface IUnitData
     Sprite Icon { get; }
     float Health { get; }
     float AttackValue { get; }
+    
+    UnitType UnitType { get; }
 }  
