@@ -2,8 +2,10 @@ using UnityEngine;
 
 public interface IUnit
 {
-    string Name { get; set; }
-    float Health { get; set; }
-    float AttackValue { get; set; }
-    bool IsEnemy { get; set; }
+    string Name { get; }
+    float Health { get; }
+    float AttackValue { get; }
+    bool IsEnemy { get; }
+    IUnitData UnitData { get; }
+
 }

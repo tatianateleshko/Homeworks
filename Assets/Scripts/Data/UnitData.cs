@@ -5,10 +5,11 @@ public class UnitData : ScriptableObject, IUnitData
 {
     public string UnitName => _name;
     public Sprite Icon => _icon;
-    public float Health { get; set; }
-    public float AttackValue { get; set; }
+    public float Health => _health;
+    public float AttackValue => _attackValue;
 
     [SerializeField] private string _name;
     [SerializeField] private Sprite _icon;
-    [SerializeField] private float Speed;
+    [SerializeField] private float _health;
+    [SerializeField] private float _attackValue;
 }
