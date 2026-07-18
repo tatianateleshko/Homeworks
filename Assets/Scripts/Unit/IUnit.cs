@@ -5,7 +5,10 @@ public interface IUnit
     string Name { get; }
     float Health { get; }
     float AttackValue { get; }
+    
     bool IsEnemy { get; }
     IUnitData UnitData { get; }
+
+    void Attack(IUnit attacker, IUnit target);
 
 }

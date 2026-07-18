@@ -11,13 +11,16 @@ public class UnitBase : IUnit
     public bool IsEnemy => _isEnemy;
 
     public IUnitData UnitData => _unitData;
-
-    public UnitBase(string name, float health, float attackValue,  bool isEnemy, IUnitData unitData )
+    public void Attack(IUnit attacker, IUnit target)
+    {
+        throw new System.NotImplementedException();
+    }
+    
+    public UnitBase(string name, float health, float attackValue, IUnitData unitData )
     {
         _name = name;
         _health = health;
         _attackValue = attackValue;
-        _isEnemy = isEnemy;
         _unitData = unitData;
     }
     private string _name;

@@ -1,5 +1,5 @@
-using Services.UnitFactory;
-using UnityEngine;
+using Gameplay.Enums;
+using Gameplay.Units;
 
 namespace Services.UnitFactory
 {
@@ -7,7 +7,29 @@ namespace Services.UnitFactory
     {
         public IUnit CreateUnit(IUnitData unitData)
         {
-            throw new System.NotImplementedException();
+            var unitType = unitData.UnitType;
+
+            switch (unitType)
+            {
+                case UnitType.DumbOrc:
+                    return CreateDumbOrc(unitData.UnitName,  unitData.Health, unitData.AttackValue, unitData);
+                case UnitType.LordVamp:
+                    return CreateLordVamp(unitData.UnitName, unitData.Health, unitData.AttackValue, unitData);
+            }
+            return null;
+        }
+
+
+        private IUnit CreateDumbOrc(string name, float health, float attackValue,  IUnitData unitData)
+        {
+            var orc = new DumbOrc(name, health, attackValue, unitData);
+            return orc; 
+        }
+        
+        private IUnit CreateLordVamp(string name, float health, float attackValue,  IUnitData unitData)
+        {
+            var orc = new LordVamp(name, health, attackValue, unitData);
+            return orc; 
         }
     }
 
