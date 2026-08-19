@@ -8,7 +8,11 @@ public interface IUnit
     
     bool IsEnemy { get; }
     IUnitData UnitData { get; }
-
-    void Attack(IUnit attacker, IUnit target);
-
+    ITeam Team { get; }
+    
+    void Attack(IUnit target);
+    void SetTeam(ITeam team);   
+    
+    float GetCurrentHealth();
+ 
 }

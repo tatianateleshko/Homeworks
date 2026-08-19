@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7270750604144078218}
   - component: {fileID: 8380149368390282732}
-  - component: {fileID: -2438636429444784676}
+  - component: {fileID: -8974216855677385468}
+  - component: {fileID: -2452936628229262432}
+  - component: {fileID: -6218679335179064213}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -47,7 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
   _monoInstallers:
-  - {fileID: -2438636429444784676}
+  - {fileID: -8974216855677385468}
+  - {fileID: -2452936628229262432}
+  - {fileID: -6218679335179064213}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 0
   _editorReflectionBakingCoverageMode: 0
@@ -62,7 +66,7 @@ MonoBehaviour:
       _missingHandlerDefaultResponse: 2
       _requireStrictUnsubscribe: 0
       _defaultAsyncTickPriority: 1
---- !u!114 &-2438636429444784676
+--- !u!114 &-8974216855677385468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,6 +75,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 409401315529861198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43c1b01a855e42d3b10702e06f544420, type: 3}
+  m_Script: {fileID: 11500000, guid: a2a93bca867602048a11ff797a39c13e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Installers.BootSystemInstaller
+--- !u!114 &-2452936628229262432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409401315529861198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e415d368900174db7a34b174596a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Installers.BootstrapInstaller
+--- !u!114 &-6218679335179064213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409401315529861198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f65f53411984aaeaba7164eac20a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Installers.GameplayInstaller
+  _teamSpawnConfig: {fileID: 11400000, guid: b1e8f025981514dc4a2c586c65852bc4, type: 2}

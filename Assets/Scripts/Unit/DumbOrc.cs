@@ -18,5 +18,11 @@ namespace Gameplay.Units
             _attackValue = attackValue;
             _unitData = unitData;
         }
+
+        public override void Attack(IUnit target)
+        {
+            var targetHealth = target.GetCurrentHealth();
+            targetHealth -= _attackValue; 
+        }
     }
 }

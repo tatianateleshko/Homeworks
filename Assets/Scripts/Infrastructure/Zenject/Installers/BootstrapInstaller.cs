@@ -1,7 +1,6 @@
 ﻿using Code.Gameplay.Signals;
 using Code.Infrastructure.Services.EventBus;
 using Code.Infrastructure.Services.Input;
-using Code.UI;
 using UnityEngine;
 using Zenject;
 
@@ -27,7 +26,7 @@ namespace Code.Infrastructure.Zenject.Installers
       Container.Bind<IEventBus>().To<ZenjectEventBus>().AsSingle();
       Container.DeclareSignal<UnitSelectSignal>();
       Container.DeclareSignal<UnitUnselectSignal>();
-      Container.DeclareSignal<AttackEnemySignal>();
+      Container.DeclareSignal<EnemySelectedSignal>();
     }
   }
 }

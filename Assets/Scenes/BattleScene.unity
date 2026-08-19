@@ -237,6 +237,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 743752122}
     m_Modifications:
+    - target: {fileID: 1406148263, guid: 291ab9f483432480c8815884e98cd0a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 383512544197517689, guid: 291ab9f483432480c8815884e98cd0a0, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1282,6 +1286,10 @@ PrefabInstance:
       propertyPath: _unitView
       value: 
       objectReference: {fileID: 1348078826}
+    - target: {fileID: 5547895957762294313, guid: 77f29811d064c764caf2a57ba8143e31, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1710,7 +1718,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &1854234144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1787,9 +1795,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1854234142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e57cfa4786445beb2c7fb4010874899, type: 3}
+  m_Script: {fileID: 11500000, guid: bf831d52f884b4f7caa6163ae02ce6b4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.UnitsWindow
+  _enemyViews:
+  - {fileID: 1141858330}
+  - {fileID: 611920271}
+  - {fileID: 1348078826}
+  - {fileID: 1720741538}
+  _playersViews:
+  - {fileID: 270392427}
+  - {fileID: 1703877554}
+  - {fileID: 1512640321}
+  - {fileID: 1827189792}
 --- !u!1 &1916319577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,9 +1962,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1945193532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edcc8df6fce74b0c9dbc4b46ecf8da49, type: 3}
+  m_Script: {fileID: 11500000, guid: c171f4c01f94942fb951df35b3a23540, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Installers.BattleSceneInstaller
 --- !u!1001 &577010945091326546
 PrefabInstance:
   m_ObjectHideFlags: 0

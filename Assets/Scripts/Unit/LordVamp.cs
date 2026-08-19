@@ -18,6 +18,11 @@ namespace  Gameplay.Units
             _unitData = unitData;
             
         }
+
+        public override void Attack(IUnit target)
+        {
+            base.Attack(target);
+        }
     }
 }
 

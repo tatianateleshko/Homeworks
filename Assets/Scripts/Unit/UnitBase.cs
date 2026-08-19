@@ -11,11 +11,31 @@ public class UnitBase : IUnit
     public bool IsEnemy => _isEnemy;
 
     public IUnitData UnitData => _unitData;
-    public void Attack(IUnit attacker, IUnit target)
+    public ITeam Team => _team;
+
+    private string _name;
+    private float _health;
+    private float _attackValue;
+    private bool _isEnemy;
+    private IUnitData _unitData;
+    private ITeam _team;
+    private IUnit _unitImplementation;
+
+    public virtual void Attack(IUnit target)
     {
-        throw new System.NotImplementedException();
+
     }
-    
+
+    public void SetTeam(ITeam team)
+    {
+        _team = team;
+    }
+
+    public float GetCurrentHealth()
+    {
+        return _health;
+    }
+
     public UnitBase(string name, float health, float attackValue, IUnitData unitData )
     {
         _name = name;
@@ -23,10 +43,4 @@ public class UnitBase : IUnit
         _attackValue = attackValue;
         _unitData = unitData;
     }
-    private string _name;
-    private float _health;
-    private float _attackValue;
-    private bool _isEnemy;
-    private IUnitData _unitData;
-
 }

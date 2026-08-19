@@ -22,4 +22,17 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _teamSpawnData:
-  - _isEnemy: 1
+  - Name: Enemy
+    IsEnemy: 1
+    Units:
+    - {fileID: 11400000, guid: 82ac4836f48594f8ab9d9b514f55e922, type: 2}
+    - {fileID: 11400000, guid: 82ac4836f48594f8ab9d9b514f55e922, type: 2}
+    - {fileID: 11400000, guid: 82ac4836f48594f8ab9d9b514f55e922, type: 2}
+    - {fileID: 11400000, guid: 82ac4836f48594f8ab9d9b514f55e922, type: 2}
+  - Name: Player
+    IsEnemy: 0
+    Units:
+    - {fileID: 11400000, guid: 210bf63ba88104390970b7fd6b886024, type: 2}
+    - {fileID: 11400000, guid: 210bf63ba88104390970b7fd6b886024, type: 2}
+    - {fileID: 11400000, guid: 210bf63ba88104390970b7fd6b886024, type: 2}
+    - {fileID: 11400000, guid: 210bf63ba88104390970b7fd6b886024, type: 2}

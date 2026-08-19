@@ -17,6 +17,8 @@ public class TeamSpawnConfig : SerializedScriptableObject
             if (teamSpawnData.Name == name)
                 return teamSpawnData;
         }
+        
+        return null;
     }
 }
 

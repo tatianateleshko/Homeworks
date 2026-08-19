@@ -1,12 +1,17 @@
+using System;
+using Code.Gameplay.Signals;
 using Code.Infrastructure.Services.Audio;
+using Code.Infrastructure.Services.EventBus;
 using Code.Infrastructure.Services.Input;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Services.TeamService;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
-namespace Code.UI
+namespace UI
 {
   public sealed class UnitView : MonoBehaviour
   {
@@ -30,11 +35,55 @@ namespace Code.UI
 
     private Sequence attackAnimation;
     private AudioPlayer audioPlayer;
-    private IInputService _input;
     
+    private ITeamService _teamService;
+    private IEventBus _eventBus;
+    private IUnit _unit;
+    
+    
+    [Inject]
+    public void Construct(IEventBus eventBus, ITeamService teamService) 
+    {
+      _eventBus = eventBus;
+      _teamService = teamService;
+    }
+    
+    private void Awake()
+    {
+      button.onClick.AddListener(SelectUnit);
+    }
+
     private void Start()
     {
       audioPlayer = AudioPlayer.Instance;
+    }
+
+    private void OnDestroy()
+    {
+      button.onClick.RemoveListener(SelectUnit);
+    }
+
+    private void SelectUnit()
+    {
+      if (_teamService == null)
+      {
+        Debug.LogError("_teamService не заинжектился (null)!");
+        return;
+      }
+
+      if (_unit == null)
+      {
+        Debug.LogError("_unit не назначен (null)!");
+        return;
+      }
+      
+      if (_teamService.GetPlayerTeam() != _unit.Team)
+      {
+          _eventBus.RaiseEvent(new UnitSelectSignal(_unit));
+          SetActive(true);
+      }
+
+      else _eventBus.RaiseEvent(new EnemySelectedSignal(_unit));
     }
 
     public void SetIcon(Sprite icon)
@@ -45,6 +94,11 @@ namespace Code.UI
     public void SetStats(string stats)
     {
       this.stats.text = stats;
+    }
+
+    public void SetUnit(IUnit unit)
+    {
+      _unit = unit;
     }
 
     public void SetActive(bool isActive)

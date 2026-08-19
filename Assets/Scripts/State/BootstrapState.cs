@@ -13,7 +13,7 @@ namespace GameStates
 
         public void Enter()
         {
-            _gameStateMachine.Enter<LoadLevelState, string>("1");
+            _gameStateMachine.Enter<LoadLevelState, string>("BattleScene");
         }
 
         public void Exit()

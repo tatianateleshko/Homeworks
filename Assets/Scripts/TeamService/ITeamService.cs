@@ -1,7 +1,14 @@
-using Unity.VisualScripting;
-using UnityEngine;
+using System.Collections.Generic;
 
-public class ITeamService
+namespace  Services.TeamService
 {
-    
+    public interface ITeamService
+    {
+        ITeam CreateTeam(string teamName);
+        ITeam GetActiveTeam(string teamName);
+        IEnumerable<ITeam> GetActiveTeams();
+        ITeam GetPlayerTeam();
+
+    }
 }
+
