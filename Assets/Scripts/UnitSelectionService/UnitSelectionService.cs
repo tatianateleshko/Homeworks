@@ -1,25 +1,27 @@
-using Services.TeamService;
-using UnityEngine;
+using Gameplay.VisualRegistry;
 
-public class UnitSelectionService: IUnitSelectionService
+namespace Services.UnitSelectionService
 {
-    private readonly ITeamService _teamService;
-    
-    public UnitSelectionService(ITeamService teamService)
+    public class UnitSelectionService: IUnitSelectionService
     {
-        _teamService = teamService;
-    }
+        private readonly IUnitVisualRegistry _visualRegistry;
+        public UnitSelectionService(IUnitVisualRegistry unitVisualRegistry)
+        {
+            _visualRegistry = unitVisualRegistry;
+        }
     
-    private IUnit _selectedUnit;    
+        private IUnit _selectedUnit;    
     
-    public void SetUnitSelected(IUnit unit)
-    {
-        if(_teamService.GetPlayerTeam() != unit.Team)
+        public void SetUnitSelected(IUnit unit)
+        {
             _selectedUnit = unit;
-    }
+            var unitVisual = _visualRegistry.GetUnitView(unit);
+            unitVisual.SetSelected(true);
+        }
 
-    public IUnit GetSelectedUnit()
-    {
-        return _selectedUnit;
+        public IUnit GetSelectedUnit()
+        {
+            return _selectedUnit;
+        }
     }
 }

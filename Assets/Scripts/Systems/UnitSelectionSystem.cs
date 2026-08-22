@@ -1,21 +1,25 @@
 using Code.Gameplay.Signals;
 using Code.Infrastructure.Services.EventBus;
-using UnityEngine;
+using Services.UnitSelectionService;
 using Zenject;
 
-public class UnitSelectionSystem: IInitializable
+namespace Gameplay.Systems
 {
-    private readonly IEventBus _eventBus;
-    private readonly IUnitSelectionService _unitSelectionService;
-    
-    public UnitSelectionSystem(IEventBus eventBus,  IUnitSelectionService unitSelectionService)
+    public class UnitSelectionSystem: IInitializable
     {
-        _eventBus = eventBus;
-        _unitSelectionService = unitSelectionService;
-    }
+        private readonly IEventBus _eventBus;
+        private readonly IUnitSelectionService _unitSelectionService;
     
-    public void Initialize()
-    {
-        _eventBus.Subscribe<UnitSelectSignal>(signal => _unitSelectionService.SetUnitSelected(signal.SelectedUnit));
+        public UnitSelectionSystem(IEventBus eventBus,  IUnitSelectionService unitSelectionService)
+        {
+            _eventBus = eventBus;
+            _unitSelectionService = unitSelectionService;
+        }
+    
+        public void Initialize()
+        {
+            _eventBus.Subscribe<UnitSelectSignal>(signal => _unitSelectionService.SetUnitSelected(signal.SelectedUnit));
+        }
     }
+
 }

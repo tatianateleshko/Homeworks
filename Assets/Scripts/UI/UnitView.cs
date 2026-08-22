@@ -65,25 +65,16 @@ namespace UI
 
     private void SelectUnit()
     {
-      if (_teamService == null)
-      {
-        Debug.LogError("_teamService не заинжектился (null)!");
-        return;
-      }
 
-      if (_unit == null)
-      {
-        Debug.LogError("_unit не назначен (null)!");
-        return;
-      }
-      
-      if (_teamService.GetPlayerTeam() != _unit.Team)
-      {
-          _eventBus.RaiseEvent(new UnitSelectSignal(_unit));
-          SetActive(true);
-      }
+        if (_teamService.GetPlayerTeam() == _unit.Team)
+        {
+            _eventBus.RaiseEvent(new UnitSelectSignal(_unit));
+        }
 
-      else _eventBus.RaiseEvent(new EnemySelectedSignal(_unit));
+        else
+        {
+            _eventBus.RaiseEvent(new EnemySelectedSignal(_unit));
+        }
     }
 
     public void SetIcon(Sprite icon)
@@ -101,12 +92,18 @@ namespace UI
       _unit = unit;
     }
 
-    public void SetActive(bool isActive)
+    public void SetSelected(bool isActive)
     {
-      Debug.Log("UnitView Unselect");
+
       activeImage.sprite = isActive ? activeIcon : inactiveIcon;
       activeBlur.SetActive(isActive);
     }
+
+
+    public void DestroyView()
+        {
+            Destroy(this.gameObject);
+        }
 
     public UniTask AnimateAttack(UnitView target)
     {

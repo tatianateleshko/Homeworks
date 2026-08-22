@@ -1,4 +1,3 @@
-using UnityEngine;
 
 public interface IUnit
 {
@@ -6,13 +5,16 @@ public interface IUnit
     float Health { get; }
     float AttackValue { get; }
     
-    bool IsEnemy { get; }
     IUnitData UnitData { get; }
     ITeam Team { get; }
     
     void Attack(IUnit target);
     void SetTeam(ITeam team);   
-    
+ 
     float GetCurrentHealth();
+
+    void SetCurrentHealth(float health);
+
+    void TakeDamage(float attackValue);
  
 }

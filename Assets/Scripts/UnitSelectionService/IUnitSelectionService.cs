@@ -1,7 +1,11 @@
-using UnityEngine;
 
-public interface IUnitSelectionService
+
+namespace Services.UnitSelectionService
 {
-    void SetUnitSelected(IUnit unit);
-    IUnit GetSelectedUnit();
+    public interface IUnitSelectionService
+    {
+        void SetUnitSelected(IUnit unit);
+        IUnit GetSelectedUnit();
+    }
+
 }

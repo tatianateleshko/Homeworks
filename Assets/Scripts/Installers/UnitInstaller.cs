@@ -1,17 +1,24 @@
 using Services.TeamService;
 using Services.UnitFactory;
-using UnityEngine;
 using Zenject;
 using UI;
+using Services.BattleService;
+using Gameplay.VisualRegistry;
+using Services.UnitSelectionService;
 
-public class UnitInstaller : Installer<UnitInstaller>
+namespace Installers
 {
-    public override void InstallBindings()
+    public class UnitInstaller : Installer<UnitInstaller>
     {
-        Container.Bind<IUnitFactory>().To<UnitFactory>().AsSingle();
-        Container.Bind<ITeamService>().To<TeamService>().AsSingle();
-        Container.Bind<IUnitsViewPresenter>().To<UnitsViewPresenter>().AsSingle();
-        Container.Bind<IUnitSelectionService>().To<UnitSelectionService>().AsSingle();
-        Container.Bind<IBattleService>().To<BattleService>().AsSingle();
+        public override void InstallBindings()
+        {
+            Container.Bind<IUnitFactory>().To<UnitFactory>().AsSingle();
+            Container.Bind<ITeamService>().To<TeamService>().AsSingle();
+            Container.Bind<IUnitsViewPresenter>().To<UnitsViewPresenter>().AsSingle();
+            Container.Bind<IUnitSelectionService>().To<UnitSelectionService>().AsSingle();
+            Container.Bind<IBattleService>().To<BattleService>().AsSingle();
+            Container.Bind<IUnitVisualRegistry>().To<UnitVisualRegistry>().AsSingle();
+        }
     }
+
 }

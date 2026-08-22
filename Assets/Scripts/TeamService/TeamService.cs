@@ -28,8 +28,7 @@ namespace Services.TeamService
                 Debug.LogError($"Team {teamName} does not exist");
             }
 
-          
-            
+                   
             var units = new List<IUnit>();
             
             foreach (var unit in  spawnData.Units)
@@ -40,16 +39,24 @@ namespace Services.TeamService
             
             var newTeam = new Team(spawnData.Name, spawnData.IsEnemy, units);
 
-            foreach (var unit in newTeam.Units)
-            {
-                unit.SetTeam(newTeam);
-            }
             
             if (!spawnData.IsEnemy)
             {
                 _playerTeam = newTeam;
+                foreach (var unit in _playerTeam.Units)
+                {
+                    unit.SetTeam(_playerTeam);
+                }
+            }
+            else
+            {
+                foreach (var unit in newTeam.Units)
+                {
+                    unit.SetTeam(newTeam);
+                }
             }
             
+
             _activeTeams.Add(newTeam);
             return newTeam;
         }
@@ -57,9 +64,6 @@ namespace Services.TeamService
 
         public ITeam GetPlayerTeam()
         {
-            if (_playerTeam == null)
-                Debug.Log("PlayerTeam is null");
-                return null;
             return _playerTeam;
         }
         

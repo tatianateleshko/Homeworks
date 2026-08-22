@@ -1,3 +1,4 @@
+using Gameplay.Systems;
 using UI;
 using Zenject;
 
@@ -10,6 +11,7 @@ namespace Installers
             Container.BindInterfacesAndSelfTo<TeamSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<UnitsViewSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<BattleSystem>().AsSingle();
+            Container.BindInterfacesAndSelfTo<UnitSelectionSystem>().AsSingle();
         }
     }
 }

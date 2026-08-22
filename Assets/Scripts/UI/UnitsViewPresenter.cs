@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using Services.TeamService;
 
 namespace UI
@@ -16,10 +17,16 @@ namespace UI
         {
             _unitsWindow.SetUpUnits(_teamService.GetActiveTeams());
         }
+
         
         public void Register(UnitsWindow unitsWindow)
         {
             _unitsWindow = unitsWindow;
+        }
+
+        public UnitView GetActiveUnit()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

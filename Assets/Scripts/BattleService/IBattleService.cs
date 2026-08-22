@@ -1,6 +1,11 @@
-using UnityEngine;
+using Cysharp.Threading.Tasks;
 
-public interface IBattleService
+
+namespace Services.BattleService
 {
-    void UnitsFight(IUnit attacker, IUnit defender);
+    public interface IBattleService
+    {
+        UniTask UnitsFight(IUnit attacker, IUnit defender);
+    }
+
 }
